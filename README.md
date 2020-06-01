@@ -1,5 +1,5 @@
 # interview_answer
-Linux应用：
+# Linux应用：
 1.已知某个进程的pid是6666,如何找到它当前打开了哪些文件？
 lsof -p 6666
 2.发现端口8001被占用，如何找出是哪个进程占用了该端口？
@@ -9,11 +9,12 @@ netstat -tunlp | grep 8001
 不会写入失败，会持续增加。有其他文件句柄占用时删除文件F相当于删除链接，而不是删除具体的数据。
 
 
-数据处理：
+# 数据处理：
 MYSQL:
 select * from table t1 where (select count(1) from table where name=t1.name and score >= t1.score) <=2;
 
-Python:
+# Python:
+``` 
 def cal_remain_seconds(user_id):
     import time
     user_seconds_info = dict()
@@ -35,4 +36,4 @@ def cal_remain_seconds(user_id):
         return 0
     remain_seconds = user_seconds_info[user_id] - int(time.time())
     return remain_seconds if remain_seconds > 0 else 0
- 
+ ```
